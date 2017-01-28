@@ -33,37 +33,109 @@ public:
 		iterator(const Range<T>* range_reference, T current);
 		virtual ~iterator();
 
+		/**
+		 * Prefix increment operator.
+		 *
+		 * @return iterator with next value in range
+		 */
 		iterator& operator++();
+
+		/**
+		 * Postfix increment operator. This method create a copy of object, go to next value in range and return the copy.
+		 *
+		 * @return a copy of the object
+		 */
 		iterator& operator++(int);
 
+		/**
+		 * Compare two iterators.
+		 *
+		 * @return if operators are equal
+		 */
 		bool operator==(const iterator& o) const;
+
+		/**
+		 * Compare two iterators.
+		 *
+		 * @return if operators are different
+		 */
 		bool operator!=(const iterator& o) const;
 
+		/**
+		 * Pointer operator.
+		 *
+		 * @return current value of iterator
+		 */
 		T& operator*();
 
 	private:
 
+		/**
+		 * Reference to original range object
+		 */
 		const Range<T>* reference;
 
+		/**
+		 * Current value
+		 */
 		T current;
 	};
 
+	/**
+	 * Begin of the range.
+	 *
+	 * @return iterator with first vale of range
+	 */
 	iterator begin() const;
+
+	/**
+	 * End of the range.
+	 *
+	 * @return iterator with last vale of range
+	 */
 	iterator end() const;
 
+	/**
+	 * Convert range to a std::vector.
+	 *
+	 * @return vector containing all elements in the range
+	 */
 	std::vector<T> to_vector() const;
 
+	/**
+	 * Size of range.
+	 *
+	 * @return size of range
+	 */
 	std::size_t size() const;
 
 	friend class iterator;
 
 private:
 
+	/**
+	 * First element in range.
+	 */
 	const T first;
+
+	/**
+	 * Last element in range.
+	 */
 	const T last;
+
+	/**
+	 * Size of steps in range
+	 */
 	const T step;
 
+	/**
+	 * Iterator to begin of range.
+	 */
 	const iterator _begin;
+
+	/**
+	 * Iterator to end of range.
+	 */
 	const iterator _end;
 };
 
