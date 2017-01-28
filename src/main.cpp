@@ -20,9 +20,11 @@ int main(void) {
 //			<< std::endl;
 
 	for (auto& b : a) {
-		std::cout << (char)b << "\n";
+		std::cout << (char)b << " ";
 	}
 
-	return EXIT_SUCCESS;
+	std::cout << std::endl;
+
+	return 0;
 }
 

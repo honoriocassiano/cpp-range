@@ -5,8 +5,8 @@
  *      Author: Cassiano
  */
 
-#ifndef RANGE2_H_
-#define RANGE2_H_
+#ifndef RANGE_H_
+#define RANGE_H_
 
 #include <cstddef>
 #include <cmath>
@@ -19,8 +19,6 @@ template<typename T> struct identity {
 template<class T>
 class Range {
 public:
-
-//	typedef typename std::common_type<T>::type common;
 
 	Range(const typename identity<T>::type& last);
 	Range(const typename identity<T>::type& first,

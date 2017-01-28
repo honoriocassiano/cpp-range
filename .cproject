@@ -46,13 +46,20 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="cpp-range.null.1300502784" name="cpp-range"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/cpp-range"/>
 		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1385087675;cdt.managedbuild.toolchain.gnu.base.1385087675.175455239;cdt.managedbuild.tool.gnu.cpp.compiler.base.1936039169;cdt.managedbuild.tool.gnu.cpp.compiler.input.1070680387">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1385087675;cdt.managedbuild.toolchain.gnu.base.1385087675.175455239;cdt.managedbuild.tool.gnu.c.compiler.base.2062135763;cdt.managedbuild.tool.gnu.c.compiler.input.1532964796">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>
