@@ -48,10 +48,10 @@ public:
 		T current;
 	};
 
-	iterator begin();
-	iterator end();
+	iterator begin() const;
+	iterator end() const;
 
-	std::vector<T> to_vector();
+	std::vector<T> to_vector() const;
 
 	std::size_t size() const;
 
@@ -97,12 +97,12 @@ Range<T>::iterator::~iterator() {
 }
 
 template<class T>
-typename Range<T>::iterator Range<T>::begin() {
+typename Range<T>::iterator Range<T>::begin() const {
 	return _begin;
 }
 
 template<class T>
-typename Range<T>::iterator Range<T>::end() {
+typename Range<T>::iterator Range<T>::end() const {
 	return _end;
 }
 
@@ -136,11 +136,11 @@ bool Range<T>::iterator::operator !=(const iterator& o) const {
 }
 
 template<class T>
-std::vector<T> Range<T>::to_vector() {
+std::vector<T> Range<T>::to_vector() const {
 	std::vector<T> e(size());
 
 	int i = 0;
-	for(auto v : *this) {
+	for (auto v : *this) {
 		e[i] = v;
 
 		++i;
@@ -154,7 +154,8 @@ std::size_t Range<T>::size() const {
 	return static_cast<int>(ceil(static_cast<float>(last - first) / step));
 }
 
-template<class TF, class TL = TF, class TS = typename std::common_type<TF, TL>::type>
+template<class TF, class TL = TF,
+		class TS = typename std::common_type<TF, TL>::type>
 Range<typename std::common_type<TF, TL, TS>::type> range(TF f, TL l, TS s = 0) {
 
 	return Range<typename std::common_type<TF, TL, TS>::type>(f, l, s);
