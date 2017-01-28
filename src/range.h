@@ -11,6 +11,7 @@
 #include <cstddef>
 #include <cmath>
 #include <type_traits>
+#include <vector>
 
 template<typename T> struct identity {
 	typedef T type;
@@ -49,6 +50,8 @@ public:
 
 	iterator begin();
 	iterator end();
+
+	std::vector<T> to_vector();
 
 	std::size_t size() const;
 
@@ -130,6 +133,20 @@ T& Range<T>::iterator::operator *() {
 template<class T>
 bool Range<T>::iterator::operator !=(const iterator& o) const {
 	return !(*this == o);
+}
+
+template<class T>
+std::vector<T> Range<T>::to_vector() {
+	std::vector<T> e(size());
+
+	int i = 0;
+	for(auto v : *this) {
+		e[i] = v;
+
+		++i;
+	}
+
+	return e;
 }
 
 template<class T>
