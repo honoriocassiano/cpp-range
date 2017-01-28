@@ -129,7 +129,7 @@ std::size_t Range<T>::size() const {
 	return static_cast<int>(ceil(static_cast<float>(last - first) / step));
 }
 
-template<class TF, class TL = TF, class TS = TF>
+template<class TF, class TL = TF, class TS = typename std::common_type<TF, TL>::type>
 Range<typename std::common_type<TF, TL, TS>::type> range(TF f, TL l, TS s = 0) {
 
 	return Range<typename std::common_type<TF, TL, TS>::type>(f, l, s);
