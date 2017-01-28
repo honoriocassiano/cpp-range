@@ -120,9 +120,10 @@ bool Range<T>::iterator::operator ==(const iterator& o) const {
 
 template<class T>
 typename Range<T>::iterator& Range<T>::iterator::operator ++(int) {
-	current = current + reference->step;
+	auto it = *this;
+	++(*this);
 
-	return *this;
+	return it;
 }
 
 template<class T>
