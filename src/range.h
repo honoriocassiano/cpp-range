@@ -33,6 +33,7 @@ public:
 		virtual ~iterator();
 
 		iterator& operator++();
+		iterator& operator++(int);
 
 		bool operator==(const iterator& o) const;
 		bool operator!=(const iterator& o) const;
@@ -112,6 +113,13 @@ typename Range<T>::iterator& Range<T>::iterator::operator ++() {
 template<class T>
 bool Range<T>::iterator::operator ==(const iterator& o) const {
 	return (reference == o.reference) && (current == o.current);
+}
+
+template<class T>
+typename Range<T>::iterator& Range<T>::iterator::operator ++(int) {
+	current = current + reference->step;
+
+	return *this;
 }
 
 template<class T>
