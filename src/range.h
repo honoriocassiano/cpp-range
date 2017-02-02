@@ -12,10 +12,17 @@
 #include <cmath>
 #include <type_traits>
 #include <vector>
+#include <iostream>
 
 template<typename T> struct identity {
 	typedef T type;
 };
+
+template <typename T>
+class Range;
+
+template <typename T>
+std::ostream& operator<< (std::ostream &, const Range<T>&);
 
 template<class T>
 class Range {
@@ -101,6 +108,8 @@ public:
 	 * @return vector containing all elements in the range
 	 */
 	std::vector<T> to_vector() const;
+
+	friend std::ostream& operator<< <T>(std::ostream& os, const Range<T>& range);
 
 	/**
 	 * Size of range.
@@ -220,6 +229,15 @@ std::vector<T> Range<T>::to_vector() const {
 	}
 
 	return e;
+}
+
+template<class T>
+std::ostream& operator<<(std::ostream& os, const Range<T>& range) {
+	for(auto& n : range) {
+		os << n << " ";
+	}
+
+	return os;
 }
 
 template<class T>
